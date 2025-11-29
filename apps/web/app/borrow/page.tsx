@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import ParallaxSection from "../../components/ParallaxSection";
 import LoanForm from "../../components/LoanForm";
 import LoanSummaryCard from "../../components/LoanSummaryCard";
 import { useWallet } from "../../context/WalletContext";
+import { Bot, MessageSquare, CheckCircle, AlertCircle } from "lucide-react";
 
 const API_URL = "http://localhost:3001";
 
@@ -55,92 +58,192 @@ export default function BorrowPage() {
     };
 
     return (
-        <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                    <span className="text-gradient">AI Loan Negotiation</span>
-                </h1>
-                <p className="text-gray-400">Let our autonomous agents find the best rates for your collateral.</p>
-            </div>
+        <div className="flex flex-col items-center cosmic-parallax w-full">
+            <ParallaxSection speed={0.2}>
+                <div className="max-w-7xl mx-auto w-full px-4 py-20">
+                    {/* Hero Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-center mb-16"
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.2, duration: 0.6 }}
+                            className="inline-block px-6 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-md text-sm font-bold text-accent mb-6 hologram"
+                        >
+                            <span className="flex items-center gap-2">
+                                <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                                AI-Powered Loan Negotiation
+                            </span>
+                        </motion.div>
+                        <h1 className="text-5xl md:text-7xl font-black mb-6">
+                            <span className="text-gradient">Request a Loan</span>
+                        </h1>
+                        <p className="text-xl dark:text-gray-300 text-gray-600 max-w-2xl mx-auto">
+                            Let our autonomous agents find the best rates for your collateral in real-time.
+                        </p>
+                    </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                {/* Left Column: Form */}
-                <div className="glass-card p-8 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
-                    <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                        <span className="w-1 h-6 bg-primary rounded-full"></span>
-                        Loan Request
-                    </h2>
-                    <LoanForm onSubmit={handleSimulate} loading={loading} />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                        {/* Left Column: Form */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="glass-card p-10 relative overflow-hidden hologram"
+                        >
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+                            <motion.h2
+                                className="text-2xl font-bold mb-8 flex items-center gap-3"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                            >
+                                <span className="w-1.5 h-8 bg-gradient-to-b from-primary to-secondary rounded-full"></span>
+                                <span className="text-primary dark:text-primary">Loan Request</span>
+                            </motion.h2>
+                            <LoanForm onSubmit={handleSimulate} loading={loading} />
 
-                    {error && (
-                        <div className="mt-6 p-4 bg-error/10 border border-error/20 text-error rounded-lg flex items-center gap-3 animate-shake">
-                            <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            <span className="text-sm font-medium">{error}</span>
-                        </div>
-                    )}
-                </div>
+                            {error && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    className="mt-6 p-4 bg-error/10 border border-error/30 text-error rounded-xl flex items-center gap-3"
+                                >
+                                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                                    <span className="text-sm font-medium">{error}</span>
+                                </motion.div>
+                            )}
+                        </motion.div>
 
-                {/* Right Column: Agent Visualization */}
-                <div className="space-y-6">
-                    <div className="glass-card p-8 min-h-[400px] relative">
-                        <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                            <span className="w-1 h-6 bg-secondary rounded-full"></span>
-                            Agent Activity
-                        </h2>
+                        {/* Right Column: Agent Visualization */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            className="space-y-6"
+                        >
+                            <div className="glass-card p-10 min-h-[400px] relative hologram">
+                                <motion.h2
+                                    className="text-2xl font-bold mb-8 flex items-center gap-3"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 }}
+                                >
+                                    <span className="w-1.5 h-8 bg-gradient-to-b from-secondary to-accent rounded-full"></span>
+                                    <span className="text-secondary dark:text-secondary">Agent Activity</span>
+                                </motion.h2>
 
                         {agentStep === "IDLE" && !result && (
-                            <div className="flex flex-col items-center justify-center h-64 text-center text-gray-500">
-                                <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-4 animate-pulse">
-                                    <svg className="w-8 h-8 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                                </div>
-                                <p>Waiting for request...</p>
-                                <p className="text-sm mt-2 text-gray-600">Connect wallet and submit to start AI agents.</p>
-                            </div>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                className="flex flex-col items-center justify-center h-64 text-center dark:text-gray-400 text-gray-500"
+                            >
+                                <motion.div
+                                    className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6"
+                                    animate={{ scale: [1, 1.1, 1] }}
+                                    transition={{ duration: 2, repeat: Infinity }}
+                                >
+                                    <Bot className="w-10 h-10 text-primary opacity-60" />
+                                </motion.div>
+                                <p className="text-lg font-medium mb-2">Waiting for request...</p>
+                                <p className="text-sm dark:text-gray-500 text-gray-600">Connect wallet and submit to start AI agents.</p>
+                            </motion.div>
                         )}
 
                         <div className="space-y-4">
                             {/* Risk Advisor Agent */}
-                            <div className={`p-5 rounded-xl border transition-all duration-500 ${agentStep === "RISK_ANALYSIS"
-                                    ? "bg-primary/10 border-primary/50 shadow-[0_0_20px_rgba(59,130,246,0.2)] scale-105"
-                                    : agentStep === "NEGOTIATION" || agentStep === "COMPLETE" ? "bg-white/5 border-white/10 opacity-50" : "hidden"
-                                }`}>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{
+                                    opacity: agentStep === "RISK_ANALYSIS" || agentStep === "NEGOTIATION" || agentStep === "COMPLETE" ? 1 : 0,
+                                    x: 0,
+                                    scale: agentStep === "RISK_ANALYSIS" ? 1.02 : 1
+                                }}
+                                transition={{ duration: 0.5 }}
+                                className={`p-6 rounded-xl border transition-all duration-500 hologram ${
+                                    agentStep === "RISK_ANALYSIS"
+                                        ? "bg-primary/10 border-primary/50 shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+                                        : agentStep === "NEGOTIATION" || agentStep === "COMPLETE"
+                                        ? "bg-white/5 dark:bg-white/5 border-white/10 dark:border-white/10 opacity-60"
+                                        : "hidden"
+                                }`}
+                            >
                                 <div className="flex items-center gap-4">
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${agentStep === "RISK_ANALYSIS" ? "bg-primary text-white animate-bounce" : "bg-gray-700 text-gray-400"}`}>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    </div>
+                                    <motion.div
+                                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                                            agentStep === "RISK_ANALYSIS"
+                                                ? "bg-primary text-white"
+                                                : "bg-gray-700 dark:bg-gray-700 text-gray-400"
+                                        }`}
+                                        animate={agentStep === "RISK_ANALYSIS" ? { rotate: 360 } : {}}
+                                        transition={{ duration: 2, repeat: agentStep === "RISK_ANALYSIS" ? Infinity : 0, ease: "linear" }}
+                                    >
+                                        <CheckCircle className="w-6 h-6" />
+                                    </motion.div>
                                     <div>
-                                        <h3 className="font-bold text-white">Risk Advisor Agent</h3>
-                                        <p className="text-xs text-gray-400 mt-1">Analyzing collateral ratio and market volatility...</p>
+                                        <h3 className="font-bold text-lg dark:text-white text-gray-900">Risk Advisor Agent</h3>
+                                        <p className="text-sm dark:text-gray-400 text-gray-600 mt-1">Analyzing collateral ratio and market volatility...</p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Negotiator Agent */}
-                            <div className={`p-5 rounded-xl border transition-all duration-500 ${agentStep === "NEGOTIATION"
-                                    ? "bg-secondary/10 border-secondary/50 shadow-[0_0_20px_rgba(139,92,246,0.2)] scale-105"
-                                    : agentStep === "COMPLETE" ? "bg-white/5 border-white/10 opacity-50" : "hidden"
-                                }`}>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{
+                                    opacity: agentStep === "NEGOTIATION" || agentStep === "COMPLETE" ? 1 : 0,
+                                    x: 0,
+                                    scale: agentStep === "NEGOTIATION" ? 1.02 : 1
+                                }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                                className={`p-6 rounded-xl border transition-all duration-500 hologram ${
+                                    agentStep === "NEGOTIATION"
+                                        ? "bg-secondary/10 border-secondary/50 shadow-[0_0_30px_rgba(139,92,246,0.3)]"
+                                        : agentStep === "COMPLETE"
+                                        ? "bg-white/5 dark:bg-white/5 border-white/10 dark:border-white/10 opacity-60"
+                                        : "hidden"
+                                }`}
+                            >
                                 <div className="flex items-center gap-4">
-                                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${agentStep === "NEGOTIATION" ? "bg-secondary text-white animate-bounce" : "bg-gray-700 text-gray-400"}`}>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                                    </div>
+                                    <motion.div
+                                        className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                                            agentStep === "NEGOTIATION"
+                                                ? "bg-secondary text-white"
+                                                : "bg-gray-700 dark:bg-gray-700 text-gray-400"
+                                        }`}
+                                        animate={agentStep === "NEGOTIATION" ? { rotate: 360 } : {}}
+                                        transition={{ duration: 2, repeat: agentStep === "NEGOTIATION" ? Infinity : 0, ease: "linear" }}
+                                    >
+                                        <MessageSquare className="w-6 h-6" />
+                                    </motion.div>
                                     <div>
-                                        <h3 className="font-bold text-white">Negotiator Agent</h3>
-                                        <p className="text-xs text-gray-400 mt-1">Optimizing loan terms based on risk profile...</p>
+                                        <h3 className="font-bold text-lg dark:text-white text-gray-900">Negotiator Agent</h3>
+                                        <p className="text-sm dark:text-gray-400 text-gray-600 mt-1">Optimizing loan terms based on risk profile...</p>
                                     </div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         {result && (
-                            <div className="mt-8 animate-fade-in-up">
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                                className="mt-8"
+                            >
                                 <LoanSummaryCard result={result} />
-                            </div>
+                            </motion.div>
                         )}
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
+        </ParallaxSection>
+    </div>
     );
 }

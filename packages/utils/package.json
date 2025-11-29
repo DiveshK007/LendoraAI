@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "tsc",
-        "dev": "tsx watch src/index.ts"
+        "dev": "echo 'Utils package - no dev server needed'"
     },
     "devDependencies": {
         "typescript": "^5.6.3",

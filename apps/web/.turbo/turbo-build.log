@@ -1,31 +1,33 @@
 
-
-> @lendora/web@ build /Users/bond/LendoraAI/LendoraAI/apps/web
+> @lendora/web@ build E:\LendoraAI\apps\web
 > next build
 
-  [1m[38;2;173;127;168m▲ Next.js 14.2.3[39m[22m
+  ▲ Next.js 14.2.3
 
- [37m[1m [22m[39m Creating an optimized production build ...
- [32m[1m✓[22m[39m Compiled successfully
-[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G[?25h [37m[1m [22m[39m Linting and checking validity of types     [32m[1m✓[22m[39m Linting and checking validity of types 
-[?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
-[?25l [37m[1m [22m[39m Generating static pages (0/9)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/9)  [36m[=   ][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (9/9)
-[?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m..[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m...[39m[2K[1G [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
-[2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/9) ...
+   Generating static pages (2/9) 
+   Generating static pages (4/9) 
+   Generating static pages (6/9) 
+ ✓ Generating static pages (9/9)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-[4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
-┌ ○ /                                    179 B          [37m[1m93.9 kB[22m[39m
-├ ○ /_not-found                          873 B          [37m[1m87.8 kB[22m[39m
-├ ○ /borrow                              2.8 kB         [37m[1m89.8 kB[22m[39m
-├ ○ /dashboard                           179 B          [37m[1m93.9 kB[22m[39m
-├ ○ /request                             40.9 kB         [37m[1m135 kB[22m[39m
-└ ○ /system                              138 B          [37m[1m87.1 kB[22m[39m
-+ First Load JS shared by all            [37m[1m87 kB[22m[39m
-  ├ chunks/65d48fa5-c9919059619d0e34.js  53.6 kB
-  ├ chunks/801-63d1dba14f41642a.js       31.4 kB
-  └ other shared chunks (total)          1.89 kB
+Route (app)                              Size     First Load JS
+┌ ○ /                                    2.65 kB         137 kB
+├ ○ /_not-found                          873 B            88 kB
+├ ○ /borrow                              3.28 kB        90.4 kB
+├ ○ /dashboard                           175 B          94.1 kB
+├ ○ /request                             5.39 kB         137 kB
+└ ○ /system                              138 B          87.3 kB
++ First Load JS shared by all            87.1 kB
+  ├ chunks/1dd3208c-6b51645cb9915249.js  53.6 kB
+  ├ chunks/286-ed1ef091cc6d5312.js       31.5 kB
+  └ other shared chunks (total)          2.05 kB
 
 
 ○  (Static)  prerendered as static content
 
-[?25h
