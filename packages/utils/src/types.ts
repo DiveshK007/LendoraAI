@@ -1,4 +1,3 @@
-export * from '@lendora/utils';
 export interface LoanRequest {
     amount: number;
     collateral: number;
