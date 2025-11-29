@@ -1,0 +1,6 @@
+name = "lendora/contracts"
+version = "0.0.0"
+compiler = "v1.0.26"
+
+[dependencies]
+aiken-lang/stdlib = { version = "v1.9.0" }
