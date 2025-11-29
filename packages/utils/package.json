@@ -1,0 +1,14 @@
+{
+    "name": "@lendora/utils",
+    "private": true,
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx watch src/index.ts"
+    },
+    "devDependencies": {
+        "typescript": "^5.6.3",
+        "tsx": "^4.7.1"
+    }
+}

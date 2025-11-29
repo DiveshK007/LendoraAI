@@ -1,17 +1,13 @@
 {
-  "name": "lendora-ai-monorepo",
-  "version": "0.0.1",
+  "name": "lendoraai",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "npm run dev --workspace=apps/web",
-    "build": "npm run build --workspaces",
-    "test": "npm run test --workspaces"
+    "dev": "turbo run dev",
+    "build": "turbo run build"
   },
   "devDependencies": {
-    "concurrently": "^8.0.0"
+    "turbo": "latest"
   }
 }

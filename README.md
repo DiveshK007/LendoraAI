@@ -2,13 +2,15 @@
 
 Decentralized Lending on Cardano with Hydra and AI Agents.
 
-## Modules
-- **Web**: Next.js Frontend (`apps/web`)
-- **Contracts**: Aiken Smart Contracts (`packages/contracts`)
-- **Agents**: AI Agent Logic (`packages/agents`)
+## Structure
+- `apps/web`: Next.js Frontend
+- `apps/backend`: Express Backend
+- `packages/agents`: AI Agents
+- `packages/contracts`: Smart Contracts
+- `packages/utils`: Shared Utils
 
 ## Setup
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
